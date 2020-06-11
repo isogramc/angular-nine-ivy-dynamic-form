@@ -1,8 +1,7 @@
 
 <div class='container'>
 <h1 class="text-info text-center">Buy Tickets {{ name }}</h1>
-
-<form [formGroup]="buyTicketForm" novalidate class="border border-light p-5" (ngSubmit)='buyTickets()'>
+<form [formGroup]="buyTicketForm" novalidate class="border border-light" (ngSubmit)='buyTickets()'>
   <input formControlName='emailControl' type="text" class="form-control mb-4" placeholder="Enter Email"/>
   <input formControlName='phoneControl' type="text" class="form-control mb-4" placeholder="Enter Phone Number"/>
   <form formGroupName="address">
@@ -15,7 +14,7 @@
       <button class="btn btn-info" (click)="addTicket()">Add Ticket</button>
     </div>
   </div>
-  <div formArrayName="tickets" *ngFor="let t of tickets.controls; let i = index">
+  <div formArrayName="tickets" class="border border-light" *ngFor="let t of tickets.controls; let i = index">
     <div class="row" [formGroupName]="i">
     <div class="col-md-12">
       <h1 class="lead">Ticket {{i+1}}</h1>

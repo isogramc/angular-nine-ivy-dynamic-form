@@ -57,10 +57,7 @@ export class AppComponent implements OnInit {
   }
 
   clear(){
-    if (this.tickets.length > 1) {
-        this.tickets.clear();
-        this.addTicket();
-    } 
+    this.tickets.reset();
   }
 
   removeLastTicket(){
